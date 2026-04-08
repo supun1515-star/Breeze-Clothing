@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Breeze Clothing</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style type="text/tailwindcss">
+        @theme {
+            --font-outfit: "Outfit", sans-serif;
+            --font-playfair: "Playfair Display", serif;
+            --color-brand-primary: #db2777; /* pink-600 */
+        }
+    </style>
+</head>
+<body class="font-outfit bg-stone-50 text-gray-900 antialiased pt-24 min-h-screen flex flex-col">
+
+    <!-- Solid Navbar for Inner Pages -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-playfair text-2xl font-bold tracking-tight text-gray-900">Breeze</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-primary transition-colors text-sm tracking-widest uppercase font-medium">Home</a>
+                    <a href="products.html" class="text-brand-primary transition-colors text-sm tracking-widest uppercase font-medium">Shop</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-brand-primary transition-colors text-sm tracking-widest uppercase font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-900 focus:outline-none" id="mobile-menu-btn-inner">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Copy of logic, will be handled by main.js) -->
+        <div id="mobile-menu-inner" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-md">Home</a>
+                <a href="products.html" class="block px-3 py-3 text-base font-medium text-brand-primary bg-gray-50 rounded-md">Shop</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-medium text-gray-600 hover:text-brand-primary hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-white py-16 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold text-gray-900 mb-4">Our Collection</h1>
+            <p class="text-gray-500 max-w-2xl mx-auto">Discover our carefully curated selection of premium clothing. Easy to style, impossible to ignore.</p>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <!-- Toolbar -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 pb-6 border-b border-gray-200 gap-4">
+            <div class="text-sm text-gray-500">Showing all 5 results</div>
+            <div class="flex items-center space-x-4">
+                <select class="form-select block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-brand-primary focus:border-brand-primary sm:text-sm rounded-md bg-white border cursor-pointer outline-none">
+                    <option>Sort by Latest</option>
+                    <option>Sort by Price: Low to High</option>
+                    <option>Sort by Price: High to Low</option>
+                    <option>Sort by Popularity</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12" id="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="group flex flex-col">
+                <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4] mb-4">
+                    <img src="assets/images/product1.jpg" alt="Lotus Love Yellow Halter" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 fallback-bg" style="background-color: #fef08a;">
+                    <!-- Add to cart overlay -->
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/50 to-transparent flex justify-center">
+                        <button class="w-full bg-white text-gray-900 font-semibold py-3 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-300 shadow-lg text-sm uppercase tracking-wider">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-brand-primary transition-colors"><a href="#">Lotus Love Yellow Halter</a></h3>
+                        <p class="text-sm text-gray-500 mt-1">Ribbed Cotton</p>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-900">Rs. 2,500</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="group flex flex-col">
+                <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4] mb-4">
+                    <img src="assets/images/product2.jpg" alt="Unicorn Dream Black Top" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 fallback-bg" style="background-color: #374151;">
+                    <div class="absolute top-4 left-4 bg-brand-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider z-10">New</div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/50 to-transparent flex justify-center">
+                        <button class="w-full bg-white text-gray-900 font-semibold py-3 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-300 shadow-lg text-sm uppercase tracking-wider">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-brand-primary transition-colors"><a href="#">Unicorn Dream Black Top</a></h3>
+                        <p class="text-sm text-gray-500 mt-1">Lace Detail</p>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-900">Rs. 2,800</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group flex flex-col">
+                <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4] mb-4">
+                    <img src="assets/images/product3.jpg" alt="Unicorn Dream Black Top Alternate" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 fallback-bg" style="background-color: #1f2937;">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/50 to-transparent flex justify-center">
+                        <button class="w-full bg-white text-gray-900 font-semibold py-3 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-300 shadow-lg text-sm uppercase tracking-wider">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-brand-primary transition-colors"><a href="#">Unicorn Magic Top</a></h3>
+                        <p class="text-sm text-gray-500 mt-1">Lace Detail</p>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-900">Rs. 2,800</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="group flex flex-col">
+                <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4] mb-4">
+                    <img src="assets/images/product4.jpg" alt="Fairy Tale Red Top" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 fallback-bg" style="background-color: #f87171;">
+                    <div class="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider z-10">-15%</div>
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/50 to-transparent flex justify-center">
+                        <button class="w-full bg-white text-gray-900 font-semibold py-3 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-300 shadow-lg text-sm uppercase tracking-wider">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-brand-primary transition-colors"><a href="#">Fairy Tale Red Top</a></h3>
+                        <p class="text-sm text-gray-500 mt-1">Mesh Detail</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-400 line-through">Rs. 3,000</p>
+                        <p class="text-lg font-semibold text-brand-primary">Rs. 2,550</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="group flex flex-col">
+                <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-[3/4] mb-4">
+                    <img src="assets/images/product5.jpg" alt="Vintage Floral Halter" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 fallback-bg" style="background-color: #d1d5db;">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/50 to-transparent flex justify-center">
+                        <button class="w-full bg-white text-gray-900 font-semibold py-3 rounded-full hover:bg-brand-primary hover:text-white transition-colors duration-300 shadow-lg text-sm uppercase tracking-wider">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 group-hover:text-brand-primary transition-colors"><a href="#">Vintage Floral Halter</a></h3>
+                        <p class="text-sm text-gray-500 mt-1">Cross-neck</p>
+                    </div>
+                    <p class="text-lg font-semibold text-gray-900">Rs. 2,600</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer - Simplified for inner pages -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-playfair text-2xl font-bold block">Breeze</span>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2026 Breeze Clothing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

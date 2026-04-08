@@ -1,0 +1,65 @@
+/* custom styles to supplement tailwind */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fallback background for images until they load or if missing */
+.fallback-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Navbar glass effect when scrolling */
+.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-scrolled #nav-logo, 
+.nav-scrolled .nav-link {
+    color: #111827 !important; /* dark slate */
+}
+
+.nav-scrolled .nav-btn {
+    background-color: #111827;
+    border-color: #111827;
+    color: #ffffff;
+}
+
+.nav-scrolled .nav-btn:hover {
+    background-color: #db2777; /* brand primary */
+    border-color: #db2777;
+}
+
+.nav-scrolled #mobile-menu-btn {
+    color: #111827 !important;
+}
+
+/* Hide scrollbar for grid if we decide to scroll horizontally on mobile */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

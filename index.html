@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breeze Clothing | Premium Fashion</title>
+    <meta name="description" content="Discover the latest premium fashion at Breeze Clothing.">
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style type="text/tailwindcss">
+        @theme {
+            --font-outfit: "Outfit", sans-serif;
+            --font-playfair: "Playfair Display", serif;
+            --color-brand-light: #fdf2f8; /* pink-50 */
+            --color-brand-primary: #db2777; /* pink-600 */
+            --color-brand-dark: #831843; /* pink-900 */
+            --color-surface: #ffffff;
+            --color-text-main: #1f2937;
+        }
+    </style>
+</head>
+<body class="font-outfit bg-stone-50 text-text-main antialiased selection:bg-brand-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <span class="font-playfair text-2xl font-bold tracking-tight text-white transition-colors duration-300" id="nav-logo">Breeze</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-white hover:text-brand-light transition-colors duration-300 text-sm tracking-widest uppercase font-medium nav-link">Home</a>
+                    <a href="products.html" class="text-white hover:text-brand-light transition-colors duration-300 text-sm tracking-widest uppercase font-medium nav-link">Shop</a>
+                    <a href="contact.html" class="text-white hover:text-brand-light transition-colors duration-300 text-sm tracking-widest uppercase font-medium nav-link">Contact</a>
+                    <a href="products.html" class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-2 rounded-full hover:bg-white hover:text-brand-primary transition-all duration-300 text-sm tracking-widest uppercase font-medium nav-btn">Shop Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-light focus:outline-none transition-colors duration-300 nav-link">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-brand-primary hover:bg-gray-50 rounded-md">Home</a>
+                <a href="products.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-brand-primary hover:bg-gray-50 rounded-md">Shop</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-medium text-gray-800 hover:text-brand-primary hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Video Slider -->
+    <header class="relative h-screen w-full overflow-hidden bg-gray-900 group">
+        <!-- Videos Container -->
+        <div id="video-slider" class="absolute inset-0 w-full h-full">
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out">
+                <div class="absolute inset-0 bg-black/40 z-10"></div> <!-- Dark Overlay -->
+                <!-- Use a placeholder video if local doesn't exist, instruct user to replace -->
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                    <!-- Placeholder video from coverr/mixkit (public domain), can be replaced by user -->
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-girl-in-a-field-looking-at-the-camera-226-large.mp4" type="video/mp4">
+                    <source src="assets/videos/slide1.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+                    <span class="text-brand-light text-sm md:text-md tracking-[0.3em] uppercase mb-4 opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">New Collection 2026</span>
+                    <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 opacity-0 translate-y-4 animate-fade-in-up drop-shadow-lg" style="animation-delay: 0.4s; animation-fill-mode: forwards;">Feel the Breeze</h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.6s; animation-fill-mode: forwards;">Discover premium clothing designed for comfort and modern elegance.</p>
+                    <a href="products.html" class="opacity-0 translate-y-4 animate-fade-in-up bg-white text-brand-primary hover:bg-brand-primary hover:text-white transition-colors duration-300 px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase shadow-lg" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+                        Explore Collection
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+                <div class="absolute inset-0 bg-black/50 z-10"></div>
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                    <!-- Placeholder video -->
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-a-fashion-show-in-a-dark-room-41980-large.mp4" type="video/mp4">
+                    <source src="assets/videos/slide2.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+                    <span class="text-brand-light text-sm md:text-md tracking-[0.3em] uppercase mb-4">Express Yourself</span>
+                    <h1 class="font-playfair text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 drop-shadow-lg">Unique Styles</h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light">Bold patterns, elegant cuts, and a touch of magic in every stitch.</p>
+                    <a href="products.html" class="bg-brand-primary text-white hover:bg-white hover:text-brand-primary transition-colors duration-300 px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase shadow-lg">
+                        Shop Looks
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 text-white/50 hover:text-white transition-colors duration-300 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 text-white/50 hover:text-white transition-colors duration-300 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <!-- Slider Indicators -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex space-x-3">
+            <button class="slide-dot w-3 h-3 rounded-full bg-white shadow-md transition-all duration-300"></button>
+            <button class="slide-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/70 shadow-md transition-all duration-300"></button>
+        </div>
+    </header>
+
+    <!-- Featured Categories / Promo -->
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-16">
+                <span class="text-brand-primary font-semibold tracking-widest uppercase text-sm mb-2">Editor's Picks</span>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-4">Trending Now</h2>
+                <div class="w-24 h-1 bg-brand-primary/20 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Promo Item 1 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="assets/images/product1.jpg" alt="Floral Top" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #fce7f3;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="bg-brand-primary text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">Hot</span>
+                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Floral Halters</h3>
+                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Promo Item 2 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 md:-translate-y-8">
+                    <img src="assets/images/product2.jpg" alt="Unicorn Print" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #f3f4f6;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="bg-white text-brand-dark text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">New</span>
+                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Graphic Tees & Tops</h3>
+                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Promo Item 3 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="assets/images/product3.jpg" alt="Love Print Top" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #fef08a;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="bg-gray-900 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">Essential</span>
+                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Everyday Elegance</h3>
+                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="products.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-900 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                    View Entire Collection
+                    <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-primary mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-playfair">Premium Quality</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We use only the finest materials to ensure comfort, durability, and a perfect fit.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-primary mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-playfair">Secure Shopping</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Your transactions are 100% secure with our encrypted payment gateways.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-primary mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-playfair">Fast Delivery</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Get your favorite styles delivered quickly to your doorstep, anywhere in Sri Lanka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-white pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="font-playfair text-3xl font-bold block mb-6">Breeze</span>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Elevating your everyday wardrobe with premium styles and unparalleled comfort. Breathe elegance into your life.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Shop</h4>
+                    <ul class="space-y-4">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors text-sm">All Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Tops & Tees</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" class="bg-gray-800 border border-gray-700 text-white px-4 py-2 w-full focus:outline-none focus:border-brand-primary rounded-l-md text-sm">
+                        <button type="submit" class="bg-brand-primary hover:bg-brand-dark transition-colors px-4 py-2 font-medium rounded-r-md text-sm">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 Breeze Clothing. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
