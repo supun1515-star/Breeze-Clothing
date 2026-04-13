@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Breeze Clothing</title>
-    <!-- Tailwind CSS v4 CDN -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style type="text/tailwindcss">
-        @theme {
-            --font-outfit: "Outfit", sans-serif;
-            --font-playfair: "Playfair Display", serif;
-            --color-brand-primary: #db2777; /* pink-600 */
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ["Outfit", "sans-serif"],
+                        playfair: ["Playfair Display", "serif"],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#db2777',
+                        }
+                    }
+                }
+            }
         }
-    </style>
+    </script>
 </head>
 <body class="font-outfit bg-stone-50 text-gray-900 antialiased pt-24 min-h-screen flex flex-col">
 
@@ -23,7 +33,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="font-playfair text-2xl font-bold tracking-tight text-gray-900">Breeze</a>
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/logo.jpg" alt="Breeze Clothing" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" id="nav-logo-inner">
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-gray-600 hover:text-brand-primary transition-colors text-sm tracking-widest uppercase font-medium">Home</a>

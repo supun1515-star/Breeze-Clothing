@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breeze Clothing | Premium Fashion</title>
     <meta name="description" content="Discover the latest premium fashion at Breeze Clothing.">
-    <!-- Tailwind CSS v4 CDN -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <style type="text/tailwindcss">
-        @theme {
-            --font-outfit: "Outfit", sans-serif;
-            --font-playfair: "Playfair Display", serif;
-            --color-brand-light: #fdf2f8; /* pink-50 */
-            --color-brand-primary: #db2777; /* pink-600 */
-            --color-brand-dark: #831843; /* pink-900 */
-            --color-surface: #ffffff;
-            --color-text-main: #1f2937;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ["Outfit", "sans-serif"],
+                        playfair: ["Playfair Display", "serif"],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#fdf2f8',
+                            primary: '#db2777',
+                            dark: '#831843',
+                        },
+                        text: {
+                            main: '#1f2937'
+                        }
+                    }
+                }
+            }
         }
-    </style>
+    </script>
 </head>
 <body class="font-outfit bg-stone-50 text-text-main antialiased selection:bg-brand-primary selection:text-white flex flex-col min-h-screen">
 
@@ -34,7 +45,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-2">
-                        <span class="font-playfair text-2xl font-bold tracking-tight text-white transition-colors duration-300" id="nav-logo">Breeze</span>
+                        <img src="assets/images/logo.jpg" alt="Breeze Clothing" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" id="nav-logo">
                     </a>
                 </div>
                 
@@ -133,39 +144,10 @@
                 <div class="w-24 h-1 bg-brand-primary/20 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Promo Item 1 -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
-                    <img src="assets/images/product1.jpg" alt="Floral Top" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #fce7f3;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="bg-brand-primary text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">Hot</span>
-                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Floral Halters</h3>
-                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
-                    </div>
-                </div>
-
-                <!-- Promo Item 2 -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 md:-translate-y-8">
-                    <img src="assets/images/product2.jpg" alt="Unicorn Print" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #f3f4f6;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="bg-white text-brand-dark text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">New</span>
-                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Graphic Tees & Tops</h3>
-                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
-                    </div>
-                </div>
-
-                <!-- Promo Item 3 -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
-                    <img src="assets/images/product3.jpg" alt="Love Print Top" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out fallback-bg" style="background-color: #fef08a;">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col items-start translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="bg-gray-900 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full mb-3 shadow-md">Essential</span>
-                        <h3 class="text-2xl font-playfair font-semibold text-white mb-2">Everyday Elegance</h3>
-                        <a href="products.html" class="text-white text-sm uppercase tracking-wider font-semibold border-b border-white/50 pb-1 group-hover:border-white transition-colors">Shop Now</a>
-                    </div>
-                </div>
+            <!-- Product Grid Container for JS -->
+            <!-- Meka JS eken auto load wenawa (assets/js/products.js file eken) -->
+            <div id="home-product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Data will be populated here -->
             </div>
             
             <div class="mt-16 text-center">
@@ -262,5 +244,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
 </body>
 </html>
